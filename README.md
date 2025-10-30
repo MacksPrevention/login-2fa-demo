@@ -1,8 +1,12 @@
 Установка:
 git clone https://github.com/MacksPrevention/login-2fa-demo.git
+
 cd login-2fa-demo
+
 npm install
+
 npm run dev
+
 Приложение будет доступно по адресу http://localhost:5173.
 
 ___________________________________________________________________________________________________
