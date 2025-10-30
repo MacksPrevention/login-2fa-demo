@@ -4,7 +4,7 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Button, message } from 'antd';
 import { useMutation } from '@tanstack/react-query';
 
-import { mockLogin, mockVerify2FA } from './api/auth';
+import { mockLogin, mockVerify2FA } from './api/auth.mock.js';
 import LogoSVG from './assets/Company.svg';
 import LoginForm from './features/LoginForm/LoginForm.jsx';
 import TwoFactorAuth from './features/TwoFactorAuth/TwoFactorAuth.jsx';
@@ -143,6 +143,7 @@ export default function App() {
             onSubmit={handleLogin}
             loading={loginMutation.isPending}
             error={!!loginMutation.isError}
+            errorMessage={loginMutation.error?.message}
             onChange={() => loginMutation.reset()}
           />
         )}

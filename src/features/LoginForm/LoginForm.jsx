@@ -12,7 +12,13 @@ const Form = styled.form`
   padding-bottom: 2rem;
 `;
 
-export default function LoginForm({ onChange, onSubmit, loading = false, error = false }) {
+export default function LoginForm({
+  onChange,
+  onSubmit,
+  loading = false,
+  error = false,
+  errorMessage = '',
+}) {
   const [username, setUsername] = useState('user@test.com');
   const [password, setPassword] = useState('123456');
 
@@ -50,7 +56,7 @@ export default function LoginForm({ onChange, onSubmit, loading = false, error =
         autoComplete="current-password"
       />
 
-      {error && <ErrorText>Invalid e-mail or password</ErrorText>}
+      {errorMessage && <ErrorText>{errorMessage}</ErrorText>}
 
       <Button type="primary" htmlType="submit" size="large" block loading={loading}>
         Log in
